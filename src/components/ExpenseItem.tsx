@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import './ExpenseItem.css'
 import { ExpensesParam } from 'dataType/commonType'
 import ExpenseDate from 'components/ExpenseDate'
+import Card from 'components/Card'
 
 function ExpenseItem({ props }: { props: ExpensesParam }) {
   const [today, setToday] = useState(getToday())
@@ -13,18 +14,15 @@ function ExpenseItem({ props }: { props: ExpensesParam }) {
   useEffect(() => {}, [])
 
   return (
-    <div className="expense-item">
+    <Card className="expense-item">
       <div>
         <ExpenseDate date={props.date} />
       </div>
-      {/* <div>{year}년&nbsp;</div>
-      <div>{month}&nbsp;</div>
-      <div>{day}</div> */}
       <div className="expense-item__description">
         <h2>{props.title}</h2>
         <div className="expense-item__price">{props.amount}</div>
       </div>
-    </div>
+    </Card>
   )
 }
 

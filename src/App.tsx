@@ -32,7 +32,7 @@ function App() {
     <div>
       <h2>Start</h2>
       {expenses.map((exp) => {
-        return <ExpenseItem props={exp} />
+        return <ExpenseItem key={exp.id} props={exp} />
       })}
       {/* <ExpenseItem expense={expenses[0]} />
       <ExpenseItem expense={expenses[1]} />
